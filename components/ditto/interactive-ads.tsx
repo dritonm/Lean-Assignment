@@ -168,13 +168,17 @@ export function InteractiveAdSection({
               </div>
             </div>
 
-            {/* Square 1080x1080 container - rendered with Next.js Image */}
-            <div className="relative aspect-square h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15 bg-paper">
+            {/* Square 1080x1080 container - seamless pixel-to-pixel fit */}
+            <div
+              className={`relative aspect-square h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15 ${
+                activeModal === 'ad1' ? 'bg-[#0a0a0a]' : 'bg-paper'
+              }`}
+            >
               <Image
                 src={activeModal === 'ad1' ? '/ditto-ad-01-final.png' : '/ditto-ad-02-final.png'}
                 alt={activeModal === 'ad1' ? 'Ditto Ad 01' : 'Ditto Ad 02'}
                 fill
-                className="object-contain"
+                className="object-cover scale-[1.005]"
                 priority
               />
             </div>
