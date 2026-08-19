@@ -99,23 +99,24 @@ export function InteractiveAdSection({
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="relative flex flex-col items-center max-h-[92vh] max-w-[92vh] w-full aspect-square"
+            className="relative flex flex-col items-center justify-center shrink-0"
+            style={{ width: 'min(88vh, 88vw)', height: 'min(88vh, 88vw)' }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header controls */}
-            <div className="absolute -top-12 left-0 right-0 flex items-center justify-between font-mono text-[12px] text-paper/80">
+            <div className="absolute -top-11 left-0 right-0 flex items-center justify-between font-mono text-[12px] text-paper/80">
               <span>{activeModal === 'ad1' ? 'Ad 01 — Direct concept (1080×1080)' : 'Ad 02 — Variant (1080×1080)'}</span>
               <button
                 type="button"
                 onClick={() => setActiveModal(null)}
-                className="flex items-center gap-1.5 rounded-full border border-paper/20 bg-paper/10 px-3 py-1 text-paper hover:bg-paper/20 transition-colors"
+                className="flex items-center gap-1.5 rounded-full border border-paper/20 bg-paper/10 px-3 py-1 text-paper hover:bg-paper/20 transition-colors cursor-pointer"
               >
                 Close ✕
               </button>
             </div>
 
-            {/* Square 1080x1080 container */}
-            <div className="h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15">
+            {/* Square 1080x1080 container - strictly 1:1 square */}
+            <div className="aspect-square h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15 bg-paper">
               {activeModal === 'ad1' ? <AdDirect dotGridOpacity={0.36} /> : <AdVariant />}
             </div>
           </div>
