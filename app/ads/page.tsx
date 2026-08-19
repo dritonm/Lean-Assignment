@@ -4,7 +4,7 @@ import { SiteNav } from '@/components/ditto/site-nav'
 import { SiteFooter } from '@/components/ditto/site-footer'
 import { Reveal } from '@/components/ditto/reveal'
 import { Eyebrow } from '@/components/ditto/brand'
-import { AdDirect, AdVariant } from '@/components/ditto/ads'
+import { InteractiveAdSection } from '@/components/ditto/interactive-ads'
 
 export const metadata: Metadata = {
   title: 'Static ad concepts — Awareness',
@@ -34,36 +34,6 @@ const adTwo = {
   ],
 }
 
-function Rationale({
-  tag,
-  concept,
-  points,
-}: {
-  tag: string
-  concept: string
-  points: string[][]
-}) {
-  return (
-    <div className="flex flex-col justify-center">
-      <Eyebrow>{tag}</Eyebrow>
-      <p className="mt-5 text-pretty font-display text-2xl font-semibold leading-snug text-ink sm:text-3xl">
-        {concept}
-      </p>
-      <dl className="mt-8 flex flex-col divide-y divide-hairline border-y border-hairline">
-        {points.map(([label, body]) => (
-          <div key={label} className="grid grid-cols-[104px_1fr] gap-4 py-5">
-            <dt className="font-mono text-[11px] tracking-wider text-ash">{label}</dt>
-            <dd className="text-[15px] leading-relaxed text-muted-ink">{body}</dd>
-          </div>
-        ))}
-      </dl>
-      <p className="mt-6 font-mono text-[11px] tracking-wider text-ash">
-        Format 1080×1080 · Campaign Awareness · CTA Learn more
-      </p>
-    </div>
-  )
-}
-
 export default function AdsPage() {
   return (
     <main className="min-h-screen pt-28">
@@ -84,33 +54,8 @@ export default function AdsPage() {
         </Reveal>
       </section>
 
-      {/* Ad 1 — interactive preview */}
-      <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <Reveal>
-            <div className="flex flex-col gap-3">
-              <AdDirect />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Rationale {...adOne} />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Ad 2 — interactive preview */}
-      <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <Reveal className="lg:order-2">
-            <div className="flex flex-col gap-3">
-              <AdVariant />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1} className="lg:order-1">
-            <Rationale {...adTwo} />
-          </Reveal>
-        </div>
-      </section>
+      {/* Interactive Ad Section with 1080x1080 Click-to-Zoom */}
+      <InteractiveAdSection adOne={adOne} adTwo={adTwo} />
 
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border border-hairline bg-paper-2 p-8 sm:flex-row sm:items-center">

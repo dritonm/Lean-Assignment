@@ -154,12 +154,12 @@ export function AdDirect() {
             {/* outer faint ring */}
             <circle cx="250" cy="230" r="155" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
             {/* inner dashed ring (edge-native hub) */}
-            <circle cx="250" cy="230" r="68" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" strokeDasharray="4 7" />
+            <circle cx="250" cy="230" r="78" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" strokeDasharray="4 7" />
             {/* spoke lines — dotted */}
-            <path d="M130 100 L210 188" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            <path d="M370 100 L290 188" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            <path d="M60 295 L188 248" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            <path d="M440 295 L312 248" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M130 100 L200 180" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M370 100 L300 180" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M60 295 L180 248" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M440 295 L320 248" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
             {/* cross links between nodes */}
             <path d="M130 100 L370 100" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="3 10" strokeLinecap="round" />
             <path d="M60 295 L440 295" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="3 10" strokeLinecap="round" />
@@ -178,22 +178,22 @@ export function AdDirect() {
 
           {/* Edge-native sync — centre hub */}
           <div
-            className="absolute flex flex-col items-center justify-center text-center"
-            style={{ left: '50%', top: '52%', width: '20cqw', height: '20cqw', transform: 'translate(-50%, -50%)' }}
+            className="absolute flex flex-col items-center justify-center text-center px-1"
+            style={{ left: '50%', top: '52%', width: '22cqw', height: '22cqw', transform: 'translate(-50%, -50%)' }}
           >
             <span
-              className="mb-[1cqw] block"
+              className="mb-[0.8cqw] block"
               style={{
-                width: '3cqw',
-                height: '3cqw',
+                width: '2.8cqw',
+                height: '2.8cqw',
                 background: '#e6ec43',
                 clipPath: 'polygon(0 0, 45% 0, 45% 45%, 100% 45%, 100% 100%, 55% 100%, 55% 55%, 0 55%)',
               }}
             />
-            <span className="font-mono text-paper" style={{ fontSize: '1.5cqw', letterSpacing: '0.03em' }}>
-              Edge-native sync
+            <span className="font-mono text-paper leading-tight" style={{ fontSize: '1.4cqw', letterSpacing: '0.02em', maxWidth: '14cqw' }}>
+              Edge-native<br />sync
             </span>
-            <span className="mt-[0.6cqw] font-mono text-paper/45" style={{ fontSize: '1.1cqw' }}>
+            <span className="mt-[0.5cqw] font-mono text-paper/45" style={{ fontSize: '1.05cqw' }}>
               P2P · BLE · LAN
             </span>
           </div>
@@ -281,7 +281,6 @@ export function AdVariant() {
         </g>
       </svg>
 
-
       <div className="absolute inset-0 flex flex-col" style={{ padding: '7cqw' }}>
         <div className="flex items-start justify-between">
           <DittoLogo className="text-ink" style={{ height: '3.2cqw' }} />
@@ -296,21 +295,6 @@ export function AdVariant() {
             className="pointer-events-none absolute flex flex-col items-end justify-center gap-[2cqw]"
             style={{ right: 0, top: 0, bottom: 0, transform: 'translateY(-80px)' }} aria-hidden="true"
           >
-            {/* vertical dotted rule */}
-            <svg
-              className="absolute"
-              style={{ right: '0.5cqw', top: 0, bottom: 0, width: '1px', height: '100%' }}
-              viewBox="0 0 1 100"
-              preserveAspectRatio="none"
-            >
-              <line
-                x1="0.5" y1="0" x2="0.5" y2="100"
-                stroke="#0a0a0a"
-                strokeWidth="2"
-                strokeDasharray="3 6"
-                strokeOpacity="0.18"
-              />
-            </svg>
             {([
               { value: '99.9%', label: 'uptime' },
               { value: '<5ms', label: 'sync latency' },
