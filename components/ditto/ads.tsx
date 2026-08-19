@@ -286,10 +286,10 @@ export function AdVariant() {
         </div>
 
         <div className="relative flex flex-1 flex-col justify-center">
-          {/* stat chips — aligned with the "0" numeral using responsive cqw units */}
+          {/* stat chips — aligned with the "0" numeral matching Photoshop reference */}
           <div
             className="pointer-events-none absolute flex flex-col items-end justify-between"
-            style={{ right: 0, top: '2.5cqw', height: '26cqw' }}
+            style={{ right: '0.5cqw', top: 0, height: '23.5cqw' }}
             aria-hidden="true"
           >
             {([
@@ -303,13 +303,13 @@ export function AdVariant() {
               >
                 <span
                   className="font-display font-semibold text-ink leading-none"
-                  style={{ fontSize: '3.8cqw', letterSpacing: '-0.02em', opacity: 0.88 }}
+                  style={{ fontSize: '3.6cqw', letterSpacing: '-0.02em', opacity: 0.88 }}
                 >
                   {value}
                 </span>
                 <span
                   className="font-mono text-ink/45"
-                  style={{ fontSize: '1.1cqw', letterSpacing: '0.12em', marginTop: '0.4cqw' }}
+                  style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.35cqw' }}
                 >
                   {label}
                 </span>
