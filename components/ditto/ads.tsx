@@ -110,12 +110,12 @@ export function AdDirect() {
     >
       {/* Dot grid field */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-40"
+        className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage: 'radial-gradient(rgba(255,255,255,0.22) 0.65px, transparent 0.7px)',
-          backgroundSize: '2.1cqw 2.1cqw',
-          maskImage: 'radial-gradient(ellipse 68% 58% at 70% 34%, black 10%, transparent 72%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 68% 58% at 70% 34%, black 10%, transparent 72%)',
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.22) 0.14cqw, transparent 0.16cqw)',
+          backgroundSize: '2.4cqw 2.4cqw',
+          maskImage: 'radial-gradient(ellipse 70% 60% at 50% 35%, black 20%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 35%, black 20%, transparent 80%)',
         }}
       />
 
@@ -152,19 +152,14 @@ export function AdDirect() {
           {/* Connector lines SVG */}
           <svg className="absolute inset-0 h-full w-full" viewBox="0 0 500 440" fill="none" aria-hidden="true">
             {/* outer faint ring */}
-            <circle cx="250" cy="230" r="155" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
+            <circle cx="250" cy="230" r="155" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
             {/* inner dashed ring (edge-native hub) */}
             <circle cx="250" cy="230" r="78" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" strokeDasharray="4 7" />
             {/* spoke lines — dotted */}
-            <path d="M130 100 L200 180" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            <path d="M370 100 L300 180" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            <path d="M60 295 L180 248" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            <path d="M440 295 L320 248" stroke="rgba(255,255,255,0.35)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
-            {/* cross links between nodes */}
-            <path d="M130 100 L370 100" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="3 10" strokeLinecap="round" />
-            <path d="M60 295 L440 295" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="3 10" strokeLinecap="round" />
-            <path d="M130 100 L60 295" stroke="rgba(255,255,255,0.10)" strokeWidth="1" strokeDasharray="3 10" strokeLinecap="round" />
-            <path d="M370 100 L440 295" stroke="rgba(255,255,255,0.10)" strokeWidth="1" strokeDasharray="3 10" strokeLinecap="round" />
+            <path d="M130 100 L200 180" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M370 100 L300 180" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M60 295 L180 248" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
+            <path d="M440 295 L320 248" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeDasharray="3 7" strokeLinecap="round" />
           </svg>
 
           {/* POS — top left */}
