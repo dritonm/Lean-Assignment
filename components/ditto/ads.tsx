@@ -286,10 +286,10 @@ export function AdVariant() {
         </div>
 
         <div className="relative flex flex-1 flex-col justify-center">
-          {/* stat chips — aligned with the "0" numeral matching Photoshop reference */}
+          {/* stat chips — precisely aligned with top and bottom bounds of '0' */}
           <div
             className="pointer-events-none absolute flex flex-col items-end justify-between"
-            style={{ right: '0.5cqw', top: 0, height: '23.5cqw' }}
+            style={{ right: '0.5cqw', top: 0, height: '27.2cqw' }}
             aria-hidden="true"
           >
             {([
@@ -309,28 +309,34 @@ export function AdVariant() {
                 </span>
                 <span
                   className="font-mono text-ink/45"
-                  style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.35cqw' }}
+                  style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.4cqw' }}
                 >
                   {label}
                 </span>
               </div>
             ))}
           </div>
+
+          {/* Large Hero Numeral */}
           <div
             className="font-display font-bold text-ink"
             style={{ fontSize: '34cqw', lineHeight: 0.8, letterSpacing: '-0.02em' }}
           >
             0
           </div>
+
+          {/* Headline precisely spaced below '0' */}
           <div
             className="font-display font-semibold text-ink"
-            style={{ fontSize: '5.2cqw', marginTop: '1cqw', letterSpacing: '-0.01em' }}
+            style={{ fontSize: '5.4cqw', marginTop: '2cqw', letterSpacing: '-0.01em', lineHeight: 1.05 }}
           >
             seconds of downtime.
           </div>
+
+          {/* Subtitle */}
           <p
             className="text-muted-ink"
-            style={{ fontSize: '2.2cqw', marginTop: '1.8cqw', maxWidth: '58cqw', lineHeight: 1.5 }}
+            style={{ fontSize: '2.2cqw', marginTop: '2.2cqw', maxWidth: '60cqw', lineHeight: 1.5 }}
           >
             Your terminals don&apos;t know the difference between a strong signal and no
             signal at all — Ditto syncs device-to-device either way.
