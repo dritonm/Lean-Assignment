@@ -286,10 +286,10 @@ export function AdVariant() {
         </div>
 
         <div className="relative flex flex-1 flex-col justify-center">
-          {/* stat chips — precisely aligned with top and bottom bounds of '0' */}
+          {/* stat chips — 99.9% aligned with top of 0, 'devices' aligned with bottom of 0 */}
           <div
             className="pointer-events-none absolute flex flex-col items-end justify-between"
-            style={{ right: '0.5cqw', top: 0, height: '27.2cqw' }}
+            style={{ right: '0.5cqw', top: '0.8cqw', height: '26cqw' }}
             aria-hidden="true"
           >
             {([
@@ -309,7 +309,7 @@ export function AdVariant() {
                 </span>
                 <span
                   className="font-mono text-ink/45"
-                  style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.4cqw' }}
+                  style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.3cqw', lineHeight: 1 }}
                 >
                   {label}
                 </span>
