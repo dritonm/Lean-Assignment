@@ -286,10 +286,11 @@ export function AdVariant() {
         </div>
 
         <div className="relative flex flex-1 flex-col justify-center">
-          {/* stat chips — absolutely positioned to the right, aligned with the "0" numeral */}
+          {/* stat chips — aligned with the "0" numeral using responsive cqw units */}
           <div
-            className="pointer-events-none absolute flex flex-col items-end justify-center gap-[2cqw]"
-            style={{ right: 0, top: 0, bottom: 0, transform: 'translateY(-80px)' }} aria-hidden="true"
+            className="pointer-events-none absolute flex flex-col items-end justify-between"
+            style={{ right: 0, top: '2.5cqw', height: '26cqw' }}
+            aria-hidden="true"
           >
             {([
               { value: '99.9%', label: 'uptime' },
@@ -298,18 +299,17 @@ export function AdVariant() {
             ] as { value: string; label: string }[]).map(({ value, label }) => (
               <div
                 key={label}
-                className="flex flex-col items-end"
-                style={{ paddingRight: '2.2cqw' }}
+                className="flex flex-col items-end text-right"
               >
                 <span
-                  className="font-display font-semibold text-ink"
-                  style={{ fontSize: '3.8cqw', lineHeight: 1, letterSpacing: '-0.02em', opacity: 0.88 }}
+                  className="font-display font-semibold text-ink leading-none"
+                  style={{ fontSize: '3.8cqw', letterSpacing: '-0.02em', opacity: 0.88 }}
                 >
                   {value}
                 </span>
                 <span
                   className="font-mono text-ink/45"
-                  style={{ fontSize: '1.1cqw', letterSpacing: '0.12em', marginTop: '0.3cqw' }}
+                  style={{ fontSize: '1.1cqw', letterSpacing: '0.12em', marginTop: '0.4cqw' }}
                 >
                   {label}
                 </span>
