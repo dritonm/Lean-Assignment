@@ -17,7 +17,17 @@ export function SiteNav() {
   return (
     <header className="fixed inset-x-0 top-3 z-50 px-3 sm:px-6">
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl border border-hairline bg-paper/90 px-4 shadow-[0_8px_28px_rgba(10,10,10,0.06)] backdrop-blur-md sm:px-6">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Ditto home">
+        <Link
+          href="/"
+          onClick={(e) => {
+            if (pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
+          className="flex items-center gap-2.5 cursor-pointer"
+          aria-label="Ditto home - scroll to top"
+        >
           <DittoLogo className="h-5 text-ink" />
           <span className="hidden font-mono text-[11px] tracking-wider text-muted-ink sm:inline">
             / concept
