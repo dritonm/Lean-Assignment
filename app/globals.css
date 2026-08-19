@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+/* ============================================================
+   Ditto — on-brand concept system
+   Light "paper" surface · near-black ink · signal yellow-green.
+   Palette pulled from ditto.com brand:
+   #FEFEFE  #0A0A0A  #252A2F  #A6A7A7  #686D73  #E6EC43
+   ============================================================ */
+
+@theme inline {
+  /* type */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-kairos), var(--font-barlow), sans-serif;
+  --font-mono: var(--font-jetbrains);
+
+  /* shadcn passthrough */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Ditto brand tokens */
+  --color-paper: #fefefe;
+  --color-paper-2: #f4f4ef;
+  --color-panel: #ffffff;
+  --color-ink: #0a0a0a;
+  --color-slate: #252a2f;
+  --color-signal: #e6ec43;
+  --color-signal-deep: #a9ad24;
+  --color-ash: #9ba1a6;
+  --color-muted-ink: #686d73;
+  --color-hairline: #e4e4de;
+  --color-line: #d5d5cd;
+  --color-danger: #c9573f;
+
+  /* Radius tiers: controls, nested surfaces, and primary frames. */
+  --radius-control: 0.75rem;
+  --radius-surface: 1rem;
+  --radius-frame: 1.5rem;
+
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.6);
+  --radius-2xl: calc(var(--radius) * 2.2);
+  --radius-3xl: calc(var(--radius) * 3);
+}
+
+:root {
+  color-scheme: light;
+  --background: #fefefe;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #fefefe;
+  --muted: #f4f4ef;
+  --muted-foreground: #686d73;
+  --border: #e4e4de;
+  --input: #e4e4de;
+  --ring: #9ba1a6;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-kairos), var(--font-barlow), 'Arial Narrow', sans-serif;
+  }
+  .title-highlight {
+    color: #9ba1a6;
+    background-color: transparent !important;
+  }
+  /* faint engineering grid, tuned for light bg */
+  .grid-lines {
+    background-image:
+      linear-gradient(var(--color-hairline) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-hairline) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .grid-dots {
+    background-image: radial-gradient(var(--color-line) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+  .radius-control {
+    border-radius: var(--radius-control);
+  }
+  .radius-surface {
+    border-radius: var(--radius-surface);
+  }
+  .radius-frame {
+    border-radius: var(--radius-frame);
+  }
+}
+
+/* dashed peer-to-peer flow */
+@keyframes ditto-dash {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+.animate-dash {
+  animation: ditto-dash 0.9s linear infinite;
+}
+
+@keyframes ditto-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+.animate-node-pulse {
+  animation: ditto-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dash,
+  .animate-node-pulse,
+  .animate-marquee {
+    animation: none;
+  }
+}
