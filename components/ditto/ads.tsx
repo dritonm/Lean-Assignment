@@ -101,7 +101,7 @@ function DeviceNode({
   )
 }
 
-export function AdDirect() {
+export function AdDirect({ dotGridOpacity = 0.6 }: { dotGridOpacity?: number }) {
   return (
     <div
       id="ad-direct"
@@ -110,8 +110,9 @@ export function AdDirect() {
     >
       {/* Dot grid field */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
         style={{
+          opacity: dotGridOpacity,
           backgroundImage: 'radial-gradient(rgba(255,255,255,0.22) 0.14cqw, transparent 0.16cqw)',
           backgroundSize: '2.4cqw 2.4cqw',
           maskImage: 'radial-gradient(ellipse 70% 60% at 50% 35%, black 20%, transparent 80%)',

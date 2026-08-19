@@ -116,7 +116,7 @@ export function InteractiveAdSection({
 
             {/* Square 1080x1080 container */}
             <div className="h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15">
-              {activeModal === 'ad1' ? <AdDirect /> : <AdVariant />}
+              {activeModal === 'ad1' ? <AdDirect dotGridOpacity={0.36} /> : <AdVariant />}
             </div>
           </div>
         </div>
