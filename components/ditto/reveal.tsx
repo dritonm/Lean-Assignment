@@ -14,14 +14,17 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      // Keep server-rendered content visible. This ensures the page remains
-      // reviewable if client-side animation hydration is delayed or blocked.
-      initial={false}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{
+        duration: 0.55,
+        delay,
+        ease: [0.16, 1, 0.3, 1], // refined apple-style ease-out curve
+      }}
     >
       {children}
     </motion.div>
   )
 }
+

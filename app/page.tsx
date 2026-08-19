@@ -103,7 +103,7 @@ export default function OverviewPage() {
             <Reveal>
               <Link
                 href="/ads"
-                className="group block rounded-3xl border border-hairline bg-panel p-6 transition-colors hover:border-line sm:p-8"
+                className="group block rounded-3xl border border-hairline bg-panel p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line hover:shadow-[0_16px_36px_rgba(10,10,10,0.05)] sm:p-8"
               >
                 <div className="mb-6 flex items-center justify-between font-mono text-[11px] tracking-wider text-muted-ink">
                   <span className="text-ink font-medium">Task 1 · Static ads</span>
@@ -129,13 +129,13 @@ export default function OverviewPage() {
             <Reveal delay={0.1}>
               <Link
                 href="/landing"
-                className="group flex h-full flex-col rounded-3xl border border-hairline bg-panel p-6 transition-colors hover:border-line sm:p-8"
+                className="group flex h-full flex-col rounded-3xl border border-hairline bg-panel p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line hover:shadow-[0_16px_36px_rgba(10,10,10,0.05)] sm:p-8"
               >
                 <div className="mb-6 flex items-center justify-between font-mono text-[11px] tracking-wider text-muted-ink">
                   <span className="text-ink font-medium">Task 2 · Landing page</span>
                   <span className="text-ash">Interactive</span>
                 </div>
-                <div className="relative flex flex-1 items-center justify-center overflow-hidden rounded-2xl border border-hairline bg-paper-2 p-8">
+                <div className="relative flex flex-1 items-center justify-center overflow-hidden rounded-2xl border border-hairline bg-paper-2 p-8 transition-transform duration-300 group-hover:scale-[1.01]">
                   <div className="grid-dots pointer-events-none absolute inset-0 opacity-60" />
                   <div className="relative text-center">
                     <p className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

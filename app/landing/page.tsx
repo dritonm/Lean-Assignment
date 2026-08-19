@@ -186,8 +186,8 @@ export default function LandingPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {problems.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08}>
-                <div className="h-full rounded-3xl border border-hairline bg-panel p-8">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-paper-2">
+                <div className="h-full rounded-3xl border border-hairline bg-panel p-8 transition-all duration-300 hover:-translate-y-1 hover:border-line hover:shadow-[0_12px_28px_rgba(10,10,10,0.04)]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-paper-2 transition-transform duration-300 group-hover:scale-105">
                     <BrandIcon name={p.icon} size={26} />
                   </div>
                   <p className="mt-6 font-display text-2xl font-semibold text-ink">{p.title}</p>
@@ -212,9 +212,9 @@ export default function LandingPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {steps.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
-                <div className="relative h-full rounded-3xl border border-hairline bg-panel p-8">
+                <div className="relative h-full rounded-3xl border border-hairline bg-panel p-8 transition-all duration-300 hover:-translate-y-1 hover:border-line hover:shadow-[0_12px_28px_rgba(10,10,10,0.04)]">
                   <span className="font-mono text-[13px] text-ash">{s.n}</span>
-                  <div className="mt-4 flex size-12 items-center justify-center rounded-xl bg-signal text-ink">
+                  <div className="mt-4 flex size-12 items-center justify-center rounded-xl bg-signal text-ink transition-transform duration-300 group-hover:scale-105">
                     <BrandIcon name={s.icon} size={26} />
                   </div>
                   <p className="mt-6 font-display text-2xl font-semibold text-ink">{s.title}</p>
