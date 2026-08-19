@@ -285,47 +285,49 @@ export function AdVariant() {
           </span>
         </div>
 
+        {/* Center content container holding "0" and the right-side stat chips */}
         <div className="relative flex flex-1 flex-col justify-center">
-          {/* stat chips — 99.9% aligned with top of 0, 'devices' aligned with bottom of 0 */}
-          <div
-            className="pointer-events-none absolute flex flex-col items-end justify-between"
-            style={{ right: '0.5cqw', top: '0.8cqw', height: '26cqw' }}
-            aria-hidden="true"
-          >
-            {([
-              { value: '99.9%', label: 'uptime' },
-              { value: '<5ms', label: 'sync latency' },
-              { value: '∞', label: 'devices' },
-            ] as { value: string; label: string }[]).map(({ value, label }) => (
-              <div
-                key={label}
-                className="flex flex-col items-end text-right"
-              >
-                <span
-                  className="font-display font-semibold text-ink leading-none"
-                  style={{ fontSize: '3.6cqw', letterSpacing: '-0.02em', opacity: 0.88 }}
-                >
-                  {value}
-                </span>
-                <span
-                  className="font-mono text-ink/45"
-                  style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.3cqw', lineHeight: 1 }}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
+          {/* Numeral + stat chips share one wrapper so the chips align to the
+              numeral's own box, independent of the outer container's centering */}
+          <div className="relative">
+            {/* Large Hero Numeral "0" */}
+            <div
+              className="font-display font-bold text-ink"
+              style={{ fontSize: '34cqw', lineHeight: 0.8, letterSpacing: '-0.02em' }}
+            >
+              0
+            </div>
+
+            {/* Stat chips — top/bottom now match the "0" box exactly */}
+            <div
+              className="pointer-events-none absolute flex flex-col items-end justify-between"
+              style={{ right: '0.5cqw', top: 0, height: '100%' }}
+              aria-hidden="true"
+            >
+              {([
+                { value: '99.9%', label: 'uptime' },
+                { value: '<5ms', label: 'sync latency' },
+                { value: '∞', label: 'devices' },
+              ] as { value: string; label: string }[]).map(({ value, label }) => (
+                <div key={label} className="flex flex-col items-end text-right">
+                  <span
+                    className="font-display font-semibold text-ink leading-none"
+                    style={{ fontSize: '3.6cqw', letterSpacing: '-0.02em', opacity: 0.88 }}
+                  >
+                    {value}
+                  </span>
+                  <span
+                    className="font-mono text-ink/45"
+                    style={{ fontSize: '1.05cqw', letterSpacing: '0.12em', marginTop: '0.3cqw', lineHeight: 1 }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Large Hero Numeral */}
-          <div
-            className="font-display font-bold text-ink"
-            style={{ fontSize: '34cqw', lineHeight: 0.8, letterSpacing: '-0.02em' }}
-          >
-            0
-          </div>
-
-          {/* Headline precisely spaced below '0' */}
+          {/* Headline — unaffected: marginTop still measures from the numeral's bottom edge */}
           <div
             className="font-display font-semibold text-ink"
             style={{ fontSize: '5.4cqw', marginTop: '2cqw', letterSpacing: '-0.01em', lineHeight: 1.05 }}
