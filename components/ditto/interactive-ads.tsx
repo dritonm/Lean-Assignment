@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { AdDirect, AdVariant } from './ads'
 
 export function InteractiveAdSection({
@@ -38,7 +39,7 @@ export function InteractiveAdSection({
               <button
                 type="button"
                 onClick={() => setActiveModal('ad1')}
-                className="relative block w-full text-left transition-transform duration-300 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-signal rounded-2xl cursor-zoom-in"
+                className="relative block w-full text-left transition-transform duration-300 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-signal rounded-2xl cursor-zoom-in overflow-hidden"
                 aria-label="Click to view Ad 1 in full 1080x1080 resolution"
               >
                 <AdDirect />
@@ -52,6 +53,25 @@ export function InteractiveAdSection({
                   Click to expand (1080×1080)
                 </div>
               </button>
+
+              {/* Download Bar */}
+              <div className="flex items-center justify-between pt-1">
+                <span className="font-mono text-[11px] tracking-wider text-ash">
+                  1080 × 1080 px · PNG
+                </span>
+                <a
+                  href="/ditto-ad-01-final.png"
+                  download="Ditto-Ad-01-Direct.png"
+                  className="flex items-center gap-2 rounded-xl border border-hairline bg-paper-2 px-3.5 py-2 font-mono text-[11px] tracking-wider text-ink transition-colors hover:border-line hover:bg-panel"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download PNG
+                </a>
+              </div>
             </div>
           </div>
           <div>
@@ -68,7 +88,7 @@ export function InteractiveAdSection({
               <button
                 type="button"
                 onClick={() => setActiveModal('ad2')}
-                className="relative block w-full text-left transition-transform duration-300 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-signal rounded-2xl cursor-zoom-in"
+                className="relative block w-full text-left transition-transform duration-300 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-signal rounded-2xl cursor-zoom-in overflow-hidden"
                 aria-label="Click to view Ad 2 in full 1080x1080 resolution"
               >
                 <AdVariant />
@@ -82,6 +102,25 @@ export function InteractiveAdSection({
                   Click to expand (1080×1080)
                 </div>
               </button>
+
+              {/* Download Bar */}
+              <div className="flex items-center justify-between pt-1">
+                <span className="font-mono text-[11px] tracking-wider text-ash">
+                  1080 × 1080 px · PNG
+                </span>
+                <a
+                  href="/ditto-ad-02-final.png"
+                  download="Ditto-Ad-02-Variant.png"
+                  className="flex items-center gap-2 rounded-xl border border-hairline bg-paper-2 px-3.5 py-2 font-mono text-[11px] tracking-wider text-ink transition-colors hover:border-line hover:bg-panel"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download PNG
+                </a>
+              </div>
             </div>
           </div>
           <div className="lg:order-1">
@@ -106,18 +145,38 @@ export function InteractiveAdSection({
             {/* Header controls */}
             <div className="absolute -top-11 left-0 right-0 flex items-center justify-between font-mono text-[12px] text-paper/80">
               <span>{activeModal === 'ad1' ? 'Ad 01 — Direct concept (1080×1080)' : 'Ad 02 — Variant (1080×1080)'}</span>
-              <button
-                type="button"
-                onClick={() => setActiveModal(null)}
-                className="flex items-center gap-1.5 rounded-full border border-paper/20 bg-paper/10 px-3 py-1 text-paper hover:bg-paper/20 transition-colors cursor-pointer"
-              >
-                Close ✕
-              </button>
+              <div className="flex items-center gap-3">
+                <a
+                  href={activeModal === 'ad1' ? '/ditto-ad-01-final.png' : '/ditto-ad-02-final.png'}
+                  download={activeModal === 'ad1' ? 'Ditto-Ad-01-Direct.png' : 'Ditto-Ad-02-Variant.png'}
+                  className="flex items-center gap-1.5 rounded-full border border-paper/20 bg-paper/10 px-3 py-1 text-paper hover:bg-paper/20 transition-colors cursor-pointer"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download PNG
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setActiveModal(null)}
+                  className="flex items-center gap-1.5 rounded-full border border-paper/20 bg-paper/10 px-3 py-1 text-paper hover:bg-paper/20 transition-colors cursor-pointer"
+                >
+                  Close ✕
+                </button>
+              </div>
             </div>
 
-            {/* Square 1080x1080 container - strictly 1:1 square */}
-            <div className="aspect-square h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15 bg-paper">
-              {activeModal === 'ad1' ? <AdDirect dotGridOpacity={0.36} /> : <AdVariant />}
+            {/* Square 1080x1080 container - rendered with Next.js Image */}
+            <div className="relative aspect-square h-full w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-paper/15 bg-paper">
+              <Image
+                src={activeModal === 'ad1' ? '/ditto-ad-01-final.png' : '/ditto-ad-02-final.png'}
+                alt={activeModal === 'ad1' ? 'Ditto Ad 01' : 'Ditto Ad 02'}
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </div>
         </div>
