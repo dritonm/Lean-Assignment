@@ -90,18 +90,6 @@ export default function AdsPage() {
           <Reveal>
             <div className="flex flex-col gap-3">
               <AdDirect />
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-wider text-ash">
-                  1080 × 1080 px · export ready
-                </span>
-                <div className="flex items-center gap-2">
-                <a
-                  href="/ditto-ad-01-direct.png"
-                  download="ditto-pos-network-doesnt-decide.png"
-                  className="rounded-xl border border-hairline bg-paper-2 px-3 py-2.5 font-mono text-[11px] tracking-wider text-muted-ink transition-colors hover:border-line hover:bg-panel hover:text-ink"
-                >PNG</a>
-                </div>
-              </div>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -116,34 +104,6 @@ export default function AdsPage() {
           <Reveal className="lg:order-2">
             <div className="flex flex-col gap-3">
               <AdVariant />
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-wider text-ash">
-                  1080 × 1080 px · export ready
-                </span>
-                <div className="flex items-center gap-2">
-                <a
-                  href="/ditto-ad-02-variant.png"
-                  download="ditto-pos-zero-cloud-wait.png"
-                  className="rounded-xl border border-hairline bg-paper-2 px-3 py-2.5 font-mono text-[11px] tracking-wider text-muted-ink transition-colors hover:border-line hover:bg-panel hover:text-ink"
-                >PNG</a>
-                <a
-                  href="/ditto-ad-02-variant.jpg"
-                  download="Ditto-Ad-02-Variant.jpg"
-                  className="flex items-center gap-2 rounded-xl border border-hairline bg-paper-2 px-4 py-2.5 font-mono text-[11px] tracking-wider text-muted-ink transition-colors hover:border-line hover:bg-panel hover:text-ink"
-                >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                    <path
-                      d="M12 3v12m0 0-4-4m4 4 4-4M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  JPG
-                </a>
-                </div>
-              </div>
             </div>
           </Reveal>
           <Reveal delay={0.1} className="lg:order-1">
